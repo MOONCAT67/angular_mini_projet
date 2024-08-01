@@ -23,7 +23,7 @@ export class PhoneListComponent implements OnInit{
     this.smartphones = this.phoneS.getphones();
   }
   trackBySmartphoneName(index: number, phone: smartphone): string {
-    return phone.name; // Use the 'name' as a unique identifier
+    return phone.id; // Use the 'name' as a unique identifier
   }
 
 }

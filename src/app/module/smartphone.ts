@@ -1,8 +1,12 @@
 export class smartphone{
-
+    id:string;
     constructor(public name: string,
         public number:number,
-        public imgURl: string){}
+        public imgURl: string,
+        public imgs:string[],
+        public desc:string){
+            this.id=crypto.randomUUID().substring(0.8);
+        }
 
-
+        
 }

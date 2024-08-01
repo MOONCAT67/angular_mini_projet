@@ -1,0 +1,22 @@
+<div class="smartphone-detail">
+  <button (click)="gettingBack()" class="getb">BACK</button>
+    <div class="main-image">
+      <img [src]="currentImage" alt="{{ injPh.name }}" />
+    </div>
+  
+    <div class="details">
+      <h1>{{ injPh.name }}</h1>
+      <p class="price">${{ injPh.number }}</p>
+      <p class="description">{{ injPh.desc }}</p>
+  
+      <div class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-images">
+          <img *ngFor="let img of injPh.imgs" [src]="img" (click)="setMainImage(img)" alt="{{ injPh.name }}" />
+        </div>
+      </div>
+  
+      <button >Add to Cart</button>
+    </div>
+  </div>
+  
