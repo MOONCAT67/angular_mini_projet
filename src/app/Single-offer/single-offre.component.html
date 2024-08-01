@@ -1,12 +1,8 @@
-
-
-
-        <section class="services" id="services">
-            <div class="service-card">
-                <img [src]="theOffer.pic" alt="Phone Sales">
-                <h3>{{theOffer.nameS}}</h3>
-                <p>{{theOffer.desc}}</p>
-            </div>
-
-            
-        </section>
+<section class="services" id="services">
+    <div class="service-card">
+        <img [src]="theOffer.pic" alt="Service Image" class="service-img">
+        <h3 class="service-title">{{theOffer.nameS}}</h3>
+        <p class="service-desc">{{theOffer.desc}}</p>
+        <button (click)="backToSer()" class="back-btn">BACK TO SERVICES</button>
+    </div>
+</section>

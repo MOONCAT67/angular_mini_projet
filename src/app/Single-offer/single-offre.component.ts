@@ -1,6 +1,6 @@
 import { Component, OnInit,  } from '@angular/core';
 import { offers } from '../module/offers';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { offerser } from '../services/serviceOFF';
 
 @Component({
@@ -12,10 +12,13 @@ import { offerser } from '../services/serviceOFF';
 })
 export class singleOffreComponent implements OnInit {
   theOffer!:offers
-  constructor(private route:ActivatedRoute,public serviceof:offerser){}
+  constructor(private route:ActivatedRoute,public serviceof:offerser,private router:Router){}
   ngOnInit(): void {
     const offerId=this.route.snapshot.params['id'];
     this.theOffer=this.serviceof.getOfferById(offerId);
+  }
+  backToSer():void{
+    this.router.navigateByUrl('offerlist');
   }
   
 }
