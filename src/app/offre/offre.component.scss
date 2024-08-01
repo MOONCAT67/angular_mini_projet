@@ -24,9 +24,12 @@ main {
 }
 
 .service-card {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: space-between; /* Push button to the bottom */
     background-color: #fff;
     border: 1px solid #ddd;
-    height: 470PX;
+    height: 470px; /* Fixed height for consistency */
     border-radius: 8px;
     padding: 20px;
     text-align: center;
@@ -45,6 +48,31 @@ main {
     color: #333;
 }
 
-.service-card p {
+p {
     color: #555;
+    margin-top: auto; /* Push button to the bottom */
+    margin-bottom: 20px; /* Margin at the bottom of the card */
+}
+
+.view-btn {
+    background-color: #303331; /* Green background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    padding: 12px 24px; /* Padding around text */
+    font-size: 1.1em; /* Font size for readability */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    margin-top: auto; /* Push button to the bottom */
+    margin-bottom: 20px; /* Margin at the bottom of the card */
+}
+
+.view-btn:hover {
+    background-color: #8b8b8b; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.view-btn:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(211, 227, 215, 0.5); /* Add custom focus outline */
 }
