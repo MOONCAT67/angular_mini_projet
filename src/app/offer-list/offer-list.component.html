@@ -1,0 +1,11 @@
+<main>
+    <section class="hero">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of services to cater to all your mobile phone needs.</p>
+    </section>
+    <div class="service-grid">
+        <div *ngFor="let serviceoff of tabOffers; trackBy: trackByid">
+            <app-offre [theOffer]="serviceoff"></app-offre>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,79 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between phone items */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Style each phone item */
+.phone {
+    background-color: #f9f9f9; /* Light background for better contrast */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    text-align: center;
+    width: 250px; /* Fixed width for consistency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.phone:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+/* Ensure the image container has a fixed size */
+.image-container {
+    width: 100%; /* Make image container fill the phone width */
+    height: 260px; /* Fixed height for the image container */
+    margin-bottom: 10px; /* Space between image and text */
+    display: flex; /* Use flex to center image */
+    align-items: center; /* Center image vertically */
+    justify-content: center; /* Center image horizontally */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Ensure the image fits within the container */
+.image-container img {
+    width: 100%; /* Make image fill the container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover entire container */
+    border-radius: 8px; /* Rounded corners for the image */
+}
+
+h1 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+h3 {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .phone {
+        width: 45%; /* Adjust width for medium screens */
+    }
+
+    .image-container {
+        height: 200px; /* Adjust height for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .phone {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .image-container {
+        height: 150px; /* Further adjust height for smaller screens */
+    }
+}

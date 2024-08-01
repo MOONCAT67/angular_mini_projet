@@ -1,0 +1,10 @@
+
+<div class="container">
+    <div class="phone">
+        <h1>{{smart.name}}</h1>
+        <div class="image-container">
+            <img [src]="smart.imgURl" [alt]="smart.name">
+          </div>
+        <h3>PRICE : {{smart.number | currency : 'EUR'}}</h3>
+    </div>
+</div>

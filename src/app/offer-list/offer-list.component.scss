@@ -1,0 +1,56 @@
+/* styles.css or equivalent stylesheet */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between items */
+}
+
+.service-grid > div {
+    /* Adjust size and styling for the service items */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Control the size of items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-grid > div img {
+    width: 150px; /* Fixed width for all images */
+    height: 150px; /* Fixed height for all images */
+    object-fit: cover; /* Ensure images cover the specified area */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.service-grid > div h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.service-grid > div p {
+    color: #555;
+    text-align: center;
+}

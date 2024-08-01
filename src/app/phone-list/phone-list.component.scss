@@ -1,0 +1,7 @@
+.phone-grid {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 15px; /* Space between grid items */
+  }
+  
