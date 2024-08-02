@@ -54,3 +54,34 @@ main {
     color: #555;
     text-align: center;
 }
+
+.ctaergorie {
+    margin: 20px 0; /* Add some space around the dropdown */
+    display: flex;
+    justify-content: center; /* Center the dropdown horizontally */
+    align-items: center; /* Center the dropdown vertically */
+}
+
+.ctaergorie select {
+    width: 250px; /* Set a fixed width for the dropdown */
+    padding: 10px; /* Add some padding for better touch targets */
+    border: 1px solid #ccc; /* Light border for a clean look */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    background-color: #f9f9f9; /* Light background color */
+    font-size: 16px; /* Increase font size for readability */
+    color: #333; /* Dark text color */
+    appearance: none; /* Remove default arrow in some browsers */
+    cursor: pointer; /* Indicate that it is interactive */
+}
+
+.ctaergorie select:focus {
+    border-color: #007bff; /* Blue border on focus for accessibility */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+
+.ctaergorie option {
+    padding: 10px; /* Add padding to each option */
+    color: #333; /* Ensure text color is consistent */
+}
+

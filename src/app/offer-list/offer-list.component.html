@@ -3,8 +3,16 @@
         <h2>Our Services</h2>
         <p>We offer a wide range of services to cater to all your mobile phone needs.</p>
     </section>
+
+    <div class="ctaergorie">
+        <select name="categ" id="1" [(ngModel)]="selectedOffer" (change)="onChangeService($event)">
+            <option value="">ALL service</option>
+            <option *ngFor="let servN of OffersNames" [value]="servN">{{servN}}</option>
+        </select>
+    </div>
+
     <div class="service-grid">
-        <div *ngFor="let serviceoff of tabOffers; trackBy: trackByid">
+        <div *ngFor="let serviceoff of tabFiltredOffers; trackBy: trackByid">
             <app-offre [theOffer]="serviceoff"></app-offre>
         </div>
     </div>
