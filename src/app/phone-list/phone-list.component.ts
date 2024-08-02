@@ -4,6 +4,8 @@ import { smartphone } from '../module/smartphone';
 import { CommonModule } from '@angular/common';
 import { servicePH } from '../services/servicePH';
 import { FormsModule } from '@angular/forms';
+import { Subscribable, Subscription } from 'rxjs';
+import { searchService } from '../services/shared-service';
 
 @Component({
   selector: 'app-phone-list',
@@ -14,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class PhoneListComponent implements OnInit{
 
-  constructor(private phoneS:servicePH){
+  constructor(private phoneS:servicePH,private searchService:searchService){
 
   }
 
@@ -22,6 +24,8 @@ export class PhoneListComponent implements OnInit{
   filteredSmartphones!: smartphone[];
   fabrications: string[] = [];
   selectedFabrication: string = '';
+  searchSubscription!: Subscription;
+  searchTerm: string = '';
 
 
 
@@ -30,6 +34,11 @@ export class PhoneListComponent implements OnInit{
     this.smartphones = this.phoneS.getphones();
     this.filteredSmartphones = this.smartphones;
     this.fabrications = this.getUniqueFabrications();
+
+    this.searchSubscription = this.searchService.searchTerm$.subscribe(term => {
+      this.searchTerm = term;
+      this.filterPhones();
+    });
   }
 
 
@@ -54,6 +63,19 @@ export class PhoneListComponent implements OnInit{
   getUniqueFabrications(): string[] {
     
     return [...new Set(this.smartphones.map(phone => phone.fabrication))];
+  }
+  ngOnDestroy(): void {
+    // Cleanup subscription
+    if (this.searchSubscription) {
+      this.searchSubscription.unsubscribe();
+    }
+  }
+
+  filterPhones(): void {
+    this.filteredSmartphones = this.smartphones.filter(phone =>
+      (this.selectedFabrication === '' || phone.fabrication === this.selectedFabrication) &&
+      phone.name.toLowerCase().startsWith(this.searchTerm.toLowerCase())
+    );
   }
 
 }
