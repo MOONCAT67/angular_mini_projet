@@ -1,7 +1,18 @@
-<div class="phone-grid">
-<div *ngFor="let phone of smartphones; trackBy: trackBySmartphoneName">
-   <app-mar [smart]="phone"></app-mar> 
-</div>
-</div>
+<div class="categori">
+   <select name="select" id="select" [(ngModel)]="selectedFabrication" (change)="onFabricationChange($event)">
+     <option value="">All Fabrications</option>
+     <option *ngFor="let fabrication of fabrications" [value]="fabrication">
+       {{ fabrication }}
+     </option>
+   </select>
+ </div>
+
+
+
+ <div class="phone-grid">
+   <div *ngFor="let phone of filteredSmartphones; trackBy: trackBySmartphoneName">
+     <app-mar [smart]="phone"></app-mar> 
+   </div>
+ </div>
 
 
